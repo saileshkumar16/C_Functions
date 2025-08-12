@@ -28,7 +28,8 @@ int main()
     
     char ch ='a';
     remove_char(str,ch);
-    printf("Final string after removing spaces is %s",str);
+    printf("Final string after removing all occurences is %s",str);
 
     return 0;
+
 }
