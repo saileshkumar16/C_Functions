@@ -2,36 +2,37 @@
 
 void merge_sorted_arrays(int arr1[], int n, int arr2[], int m, int arr3[]) 
 {
-    int i = 0, j = 0, k = 0;
-
-    while(i < n && j < m)
+int i=0, j=0, k=0;
+    
+    for( ; i<n && j<m; )
     {
-        if(arr1[i] < arr2[j])
+        if(arr1[i]<arr2[j])
         {
             arr3[k] = arr1[i];
-            i++;
             k++;
+            i++;
         }
+        
         else
         {
-            arr3[k] = arr2[j];
-            j++;
+            arr3[k]=arr2[j];
             k++;
+            j++;
         }
     }
-
-    while(i < n)
+    
+    for(; i<n; )
     {
-        arr3[k] = arr1[i];
-        i++;
+        arr3[k]=arr1[i];
         k++;
+        i++;
     }
-
-    while(j < m)
+    
+    for(; j<m; )
     {
         arr3[k] = arr2[j];
-        j++;
         k++;
+        j++;
     }
 }
 
@@ -54,3 +55,4 @@ int main()
 
     return 0;
 }
+
