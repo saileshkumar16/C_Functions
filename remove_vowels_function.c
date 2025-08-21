@@ -1,28 +1,29 @@
 #include <stdio.h>
+#include <string.h>
 
-void removeVowels(char *str)
+void removeVowels(char str[])
 {
-    int i, j;
-    for (i = 0; str[i] != '\0'; i++) 
+    for(int i=0; str[i] != '\0'; )
     {
-        // Check if current char is a vowel
-        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
-            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' ||
+           str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
         {
-
-    
-            for (j = i; str[j] != '\0'; j++)
+            for(int j=i; str[j] != '\0'; j++)
             {
-                str[j] = str[j + 1];
+                str[j] = str[j+1];
             }
-            i--; //recheck the same index
+        }
+        else
+        {
+            i++;
         }
     }
 }
 
-int main() {
-    char str[] = "aec";
+int main()
+{
+    char str[] = "sailesh";
     removeVowels(str);
-    printf("After removing vowels: %s\n", str);
+    printf("%s", str);
     return 0;
 }
